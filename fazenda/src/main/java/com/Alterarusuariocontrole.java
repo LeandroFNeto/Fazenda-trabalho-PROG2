@@ -134,5 +134,39 @@ public class Alterarusuariocontrole {
         alert.setContentText(mensagem);
         alert.show();
     }
+    
+    @FXML
+private void excluirUsuario() {
+    String loginSelecionado = comboUsuarios.getValue(); // ComboBox com os logins dos usuários
+
+    if (loginSelecionado == null) {
+        mostrarErro("Selecione um usuário para excluir.");
+        return;
+    }
+
+    try {
+        // Confirmação de exclusão (opcional)
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmação");
+        alert.setHeaderText("Excluir Usuário");
+        alert.setContentText("Tem certeza que deseja excluir o usuário: " + loginSelecionado + "?");
+
+        if (alert.showAndWait().get().getButtonData().isCancelButton()) {
+            return;
+        }
+
+        // Exclui o usuário do banco de dados
+        dao.excluir("login", loginSelecionado);
+        mostrarSucesso("Usuário excluído com sucesso!");
+
+        // Atualiza os campos e a lista de logins
+        limparCampos();
+        carregarUsuarios();
+    } catch (Exception e) {
+        mostrarErro("Erro ao excluir o usuário: " + e.getMessage());
+        e.printStackTrace();
+    }
+}
+
 }
 

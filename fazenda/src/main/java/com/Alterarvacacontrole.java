@@ -133,4 +133,38 @@ public class Alterarvacacontrole {
         alert.setContentText(mensagem);
         alert.show();
     }
+    
+    @FXML
+private void excluirVaca() {
+    String brincoSelecionado = comboBrinco.getValue();
+
+    if (brincoSelecionado == null) {
+        mostrarErro("Selecione uma vaca para excluir.");
+        return;
+    }
+
+    try {
+        // Confirmação de exclusão (opcional)
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmação");
+        alert.setHeaderText("Excluir Vaca");
+        alert.setContentText("Tem certeza que deseja excluir a vaca com o brinco: " + brincoSelecionado + "?");
+
+        if (alert.showAndWait().get().getButtonData().isCancelButton()) {
+            return;
+        }
+
+        // Exclui a vaca do banco de dados
+        dao.excluir("brinco", brincoSelecionado);
+        mostrarSucesso("Vaca excluída com sucesso!");
+
+        // Atualiza os campos e a lista de brincos
+        limparCampos();
+        carregarBrincos();
+    } catch (Exception e) {
+        mostrarErro("Erro ao excluir a vaca: " + e.getMessage());
+        e.printStackTrace();
+    }
+}
+
 }

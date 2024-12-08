@@ -16,11 +16,12 @@
       <Label layoutX="176.0" layoutY="197.0" text="Nome" />
       <Label layoutX="176.0" layoutY="267.0" text="Raça" />
       <TextField fx:id="campoRaca" layoutX="236.0" layoutY="263.0" prefHeight="26.0" prefWidth="214.0" />
-      <Button layoutX="150.0" layoutY="398.0" mnemonicParsing="false" onAction="#Menu" prefHeight="35.0" prefWidth="74.0" text="cancelar" />
+      <Button layoutX="305.0" layoutY="398.0" mnemonicParsing="false" onAction="#Menu" prefHeight="35.0" prefWidth="74.0" text="cancelar" />
       <Label layoutX="210.0" layoutY="41.0" text="Alterar vaca">
          <font>
             <Font name="System Bold Italic" size="36.0" />
          </font>
       </Label>
+      <Button layoutX="173.0" layoutY="398.0" mnemonicParsing="false" onAction="#excluirVaca" prefHeight="35.0" prefWidth="74.0" text="Excluir" />
    </children>
 </AnchorPane>

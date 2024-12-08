@@ -16,7 +16,7 @@
       <Label layoutX="176.0" layoutY="125.0" text="login" />
       <Label layoutX="186.0" layoutY="258.0" text="Nome" />
       <Label layoutX="186.0" layoutY="317.0" text="senha" />
-      <Button layoutX="150.0" layoutY="398.0" mnemonicParsing="false" onAction="#Menu" prefHeight="35.0" prefWidth="74.0" text="cancelar" />
+      <Button layoutX="301.0" layoutY="398.0" mnemonicParsing="false" onAction="#Menu" prefHeight="35.0" prefWidth="74.0" text="cancelar" />
       <Label layoutX="210.0" layoutY="41.0" text="Alterar usuario">
          <font>
             <Font name="System Bold Italic" size="36.0" />
@@ -25,5 +25,6 @@
       <PasswordField fx:id="campoSenha" layoutX="236.0" layoutY="313.0" prefHeight="26.0" prefWidth="214.0" />
       <Label layoutX="187.0" layoutY="212.0" text="Login" />
       <TextField fx:id="campoLogin" layoutX="236.0" layoutY="207.0" prefHeight="26.0" prefWidth="214.0" />
+      <Button layoutX="173.0" layoutY="398.0" mnemonicParsing="false" onAction="#excluirUsuario" prefHeight="35.0" prefWidth="74.0" text="Excluir" />
    </children>
 </AnchorPane>
